@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/catalog', function () {
+//    return view('welcome');
+//});
+
+Route::get('/catalog', [\App\Http\Controllers\CategoryController::class, 'index']);
+
+
+Route::get('/catalog/{id}', [\App\Http\Controllers\CategoryController::class, 'category']);
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
