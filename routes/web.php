@@ -17,10 +17,11 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/catalog', [\App\Http\Controllers\CategoryController::class, 'index']);
+Route::get('/catalog', [\App\Http\Controllers\CatalogController::class, 'index'])->name('catalog');
 
+Route::get('/catalog/{id}', [\App\Http\Controllers\CatalogController::class, 'category'])->name('catalog_category');
 
-Route::get('/catalog/{id}', [\App\Http\Controllers\CategoryController::class, 'category']);
+Route::get('/catalog/{id}/{product_id}', [\App\Http\Controllers\CatalogController::class, 'detail'])->name('catalog_detail');
 
 
 
