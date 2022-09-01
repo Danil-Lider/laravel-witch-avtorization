@@ -464,9 +464,13 @@
                 </h2>
         @endif
         <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">/</a></li>
-            <li><a href="#">Shop Products</a></li>
+            <li><a href="{{route('catalog')}}">Каталог</a></li>
+
+            @if (!empty($category))
+                <li><a href="{{route('catalog')}}/{{$category->id}}">{{$category->name}}</a></li>
+            @endif
+
+
         </ul>
     </div>
 </header>

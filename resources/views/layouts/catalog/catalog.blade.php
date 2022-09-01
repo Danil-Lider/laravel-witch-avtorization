@@ -7,7 +7,7 @@
             <div class="row shop">
                 <div class="col-md-8 col-sm-6 col-xs-12 shoppage1">
                     <div class="we-found">
-                        <h4>We found <strong>25</strong> products available for you</h4>
+                        <h4>We found <strong>{{ count($productsByCategory) }}</strong> products available for you</h4>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12 shoppage1">
@@ -257,303 +257,46 @@
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-12 shop5 ">
-                    <div class="image-left ">
-                        <div class="product-img product-item shop5 ">
-                            <a href=""><img src="{{asset('')}}images/img44.jpg" alt="" class="img-responsive"></a>
-                            <div class="sale-img shop1 shop2">
-                                <div class="before shop1 v2"></div>
-                            </div>
-                            <div class="ribbon zoa-hot shop-v1"><span>New</span></div>
-                            <div class="product-button-group product-details">
-                                <a href="#" class="zoa-btn zoa-quickview">
-                                    <span class="fa fa-shopping-bag"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-wishlist">
-                                    <span class="fa fa-balance-scale"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-addcart">
-                                    <span class="fa fa-heart"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6">
-                            <p><a href="#">Vladimir the Fox</a></p>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li class="st-rv"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
 
-                                <li><a class="sales-36" href="#">$36.00</a>
-                                </li>
+                    @foreach($productsByCategory as $key => $product)
 
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="image-left">
-                        <div class="product-img product-item shop5">
-                            <a href=""><img src="{{asset('')}}images/img39.jpg" alt="" class="img-responsive"></a>
-                            <div class="sale-img shop1 shop2 st-v2">
-                                <div class="before shop1 v2 st-v2"></div>
+                        <div class="image-left ">
+                            <div class="product-img product-item shop5 ">
+                                <a href=""><img src="{{asset('')}}images/img44.jpg" alt="" class="img-responsive"></a>
+                                <div class="sale-img shop1 shop2">
+                                    <div class="before shop1 v2"></div>
+                                </div>
+                                <div class="ribbon zoa-hot shop-v1"><span>New</span></div>
+                                <div class="product-button-group product-details">
+                                    <a href="#" class="zoa-btn zoa-quickview">
+                                        <span class="fa fa-shopping-bag"></span>
+                                    </a>
+                                    <a href="#" class="zoa-btn zoa-wishlist">
+                                        <span class="fa fa-balance-scale"></span>
+                                    </a>
+                                    <a href="#" class="zoa-btn zoa-addcart">
+                                        <span class="fa fa-heart"></span>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="ribbon zoa-hot shop-v1 v2"><span>-25%</span></div>
+                            <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6">
+                                <p><a href="#">{{$product->name}}</a></p>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
+                                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
+                                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
+                                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
+                                    <li class="st-rv"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
 
-                            <div class="product-button-group product-details">
-                                <a href="#" class="zoa-btn zoa-quickview">
-                                    <span class="fa fa-shopping-bag"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-wishlist">
-                                    <span class="fa fa-balance-scale"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-addcart">
-                                    <span class="fa fa-heart"></span>
-                                </a>
+                                    <li><a class="sales-36" href="#">{{$product->price}} руб</a>
+                                    </li>
+
+                                </ul>
                             </div>
                         </div>
-                        <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6">
-                            <p><a href="#">Vladimir the Fox</a></p>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li class="st-rv"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
 
-                                <li><a class="sales-36" href="#">$36.00</a>
-                                </li>
+                    @endforeach
 
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="image-left">
-                        <div class="product-img product-item shop5">
-                            <a href=""><img src="{{asset('')}}images/img40.jpg" alt="" class="img-responsive"></a>
-                            <div class="product-button-group product-details">
-                                <a href="#" class="zoa-btn zoa-quickview">
-                                    <span class="fa fa-shopping-bag"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-wishlist">
-                                    <span class="fa fa-balance-scale"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-addcart">
-                                    <span class="fa fa-heart"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6">
-                            <p><a href="#">Vladimir the Fox</a></p>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li class="st-rv"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
-
-                                <li><a class="sales-36" href="#">$36.00</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="image-left">
-                        <div class="product-img product-item shop5">
-                            <a href=""><img src="{{asset('')}}images/img46.jpg" alt="" class="img-responsive"></a>
-                            <div class="sale-img shop1 shop2">
-                                <div class="before shop1 v2"></div>
-                            </div>
-                            <div class="ribbon zoa-hot shop-v1"><span>New</span></div>
-                            <div class="product-button-group product-details">
-                                <a href="#" class="zoa-btn zoa-quickview">
-                                    <span class="fa fa-shopping-bag"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-wishlist">
-                                    <span class="fa fa-balance-scale"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-addcart">
-                                    <span class="fa fa-heart"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6">
-                            <p><a href="#">Vladimir the Fox</a></p>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li class="st-rv"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
-
-                                <li><a  class="sales-36" href="#">$36.00</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="image-left">
-                        <div class="product-img product-item shop5">
-                            <a href=""><img src="{{asset('')}}images/img53.jpg" alt="" class="img-responsive"></a>
-                            <div class="sale-img shop1 shop2 st-v2">
-                                <div class="before shop1 v2 st-v2"></div>
-                            </div>
-                            <div class="ribbon zoa-hot shop-v1 v2"><span>-25%</span></div>
-
-                            <div class="product-button-group product-details">
-                                <a href="#" class="zoa-btn zoa-quickview">
-                                    <span class="fa fa-shopping-bag"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-wishlist">
-                                    <span class="fa fa-balance-scale"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-addcart">
-                                    <span class="fa fa-heart"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6">
-                            <p><a href="#">Vladimir the Fox</a></p>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li class="st-rv"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
-
-                                <li><a class="sales-36" href="#">$36.00</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="image-left">
-                        <div class="product-img product-item shop5">
-                            <a href=""><img src="{{asset('')}}images/img55.jpg" alt="" class="img-responsive"></a>
-                            <div class="product-button-group product-details">
-                                <a href="#" class="zoa-btn zoa-quickview">
-                                    <span class="fa fa-shopping-bag"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-wishlist">
-                                    <span class="fa fa-balance-scale"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-addcart">
-                                    <span class="fa fa-heart"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6">
-                            <p><a href="#">Vladimir the Fox</a></p>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li class="st-rv"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
-
-                                <li><a class="sales-36" href="#">$36.00</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="image-left">
-                        <div class="product-img product-item shop5">
-                            <a href=""><img src="{{asset('')}}images/img45.jpg" alt="" class="img-responsive"></a>
-                            <div class="sale-img shop1 shop2">
-                                <div class="before shop1 v2"></div>
-                            </div>
-                            <div class="ribbon zoa-hot shop-v1"><span>New</span></div>
-                            <div class="product-button-group product-details">
-                                <a href="#" class="zoa-btn zoa-quickview">
-                                    <span class="fa fa-shopping-bag"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-wishlist">
-                                    <span class="fa fa-balance-scale"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-addcart">
-                                    <span class="fa fa-heart"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6">
-                            <p><a href="#">Vladimir the Fox</a></p>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li class="st-rv"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
-
-                                <li><a class="sales-36" href="#">$36.00</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="image-left">
-                        <div class="product-img product-item shop5">
-                            <a href=""><img src="{{asset('')}}images/img49.jpg" alt="" class="img-responsive"></a>
-                            <div class="sale-img shop1 shop2 st-v2">
-                                <div class="before shop1 v2 st-v2"></div>
-                            </div>
-                            <div class="ribbon zoa-hot shop-v1 v2"><span>-25%</span></div>
-
-                            <div class="product-button-group product-details">
-                                <a href="#" class="zoa-btn zoa-quickview">
-                                    <span class="fa fa-shopping-bag"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-wishlist">
-                                    <span class="fa fa-balance-scale"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-addcart">
-                                    <span class="fa fa-heart"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6">
-                            <p><a href="#">Vladimir the Fox</a></p>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li class="st-rv"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
-
-                                <li><a class="sales-36" href="#">$36.00</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="image-left">
-                        <div class="product-img product-item shop5">
-                            <a href=""><img src="{{asset('')}}images/img59.jpg" alt="" class="img-responsive"></a>
-                            <div class="product-button-group product-details">
-                                <a href="#" class="zoa-btn zoa-quickview">
-                                    <span class="fa fa-shopping-bag"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-wishlist">
-                                    <span class="fa fa-balance-scale"></span>
-                                </a>
-                                <a href="#" class="zoa-btn zoa-addcart">
-                                    <span class="fa fa-heart"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6">
-                            <p><a href="#">Vladimir the Fox</a></p>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                <li class="st-rv"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
-
-                                <li><a class="sales-36" href="#">$36.00</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
                     <div class="loadmore">
                         <a href="#">load more</a>
                     </div>

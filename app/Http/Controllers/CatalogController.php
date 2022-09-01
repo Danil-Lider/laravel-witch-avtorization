@@ -12,9 +12,10 @@ class CatalogController extends Controller
     public function index(){
 
         $categories = Category::all();
+        $productsByCategory =  Product::all();
 
         return view('layouts.catalog.catalog',
-            ['categories' => $categories]
+            ['categories' => $categories, 'productsByCategory' => $productsByCategory]
         );
 
     }
@@ -24,8 +25,10 @@ class CatalogController extends Controller
         $category = Category::findOrFail($id);
         $categories = Category::all();
 
+        $productsByCategory =  Product::where('Category_id', $id)->get();
+
         return view('layouts.catalog.catalog',
-            ['category' => $category, 'categories' => $categories
+            ['category' => $category, 'categories' => $categories, 'productsByCategory' =>  $productsByCategory
             ]
         );
 
@@ -34,9 +37,10 @@ class CatalogController extends Controller
     public function detail($id,$product_id){
 
         $product = Product::where('id', $product_id)->get();
+        $category = Category::findOrFail($id);
 
         return view('layouts.catalog.detail',
-            ['product' => $product[0]]
+            ['product' => $product[0], 'category' => $category]
         );
 
     }

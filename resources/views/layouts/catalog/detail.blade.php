@@ -57,14 +57,14 @@
                 <div class="col-md-5 col-sm-5 col-xs-12">
                     <div class="product-info s8 pro-v1 pro-v2 pro-v4">
                         <div class="sale-para2 shop-1 pro-v1 shop-5 shop-6 shop-7 shop-8 pro-v1 pro-v2">
-                            <p><a href="#">Calvin Klein Logo Sweatpants</a></p>
+                            <p><a href="#">{{ $product->name }}</a></p>
                             <ul>
                                 <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
                                 <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
                                 <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
                                 <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
                                 <li class="st"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a><em><span>6 Review(s)</span></em></li>
-                                <li><a class="sales-36-products" href="#">$36.00</a></li>
+                                <li><a class="sales-36-products" href="#">{{ $product->price }} руб</a></li>
                             </ul>
                         </div>
                         <div class="short-desc">
