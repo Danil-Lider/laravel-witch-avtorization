@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,21 +15,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/catalog', function () {
-//    return view('welcome');
-//});
 
+
+
+
+
+// CATALOG
 Route::get('/catalog', [\App\Http\Controllers\CatalogController::class, 'index'])->name('catalog');
 
 Route::get('/catalog/{id}', [\App\Http\Controllers\CatalogController::class, 'category'])->name('catalog_category');
 
 Route::get('/catalog/{id}/{product_id}', [\App\Http\Controllers\CatalogController::class, 'detail'])->name('catalog_detail');
+// CATALOG END
 
 
 
+
+
+
+
+
+//MAIN PAGE
 Route::get('/', function () {
     return view('welcome');
 });
+//MAIN PAGE END
+
+
+
+
+
+
+//ADMIN PANEL
+
+Route::group(['middleware' => 'role:admin'], function() {
+    Route::get('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'index']);
+});
+
+//ADMIN PANEL END
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
