@@ -17,17 +17,53 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
+
+Route::get('/admin', [\App\Http\Controllers\admin\pages\pageController::class, 'index'])->name('admin');
+
+Route::prefix('admin')->group(function () {
+
+    Route::resource('pages', \App\Http\Controllers\admin\pages\pageController::class);
+
+//    Route::get('/users', function () {
+        // Соответствует URL-адресу `/admin/users` ...
+//    });
+});
+
+
+
+
+
+
+
+
+
+
+//Route::get('/admin/pages', [\App\Http\Controllers\admin\pages\pageController::class, 'index'])->name('admin-pages');
+//Route::get('/admin/pages/create', [\App\Http\Controllers\admin\pages\pageController::class, 'create'])->name('create-page');
+
+Route::get('/about', function () {
+    return view('layouts.pages.about');
+});
+
+
+
+
+
+
+
 Route::get('/catalog', [\App\Http\Controllers\CatalogController::class, 'index'])->name('catalog');
 
-Route::get('/catalog/{id}', [\App\Http\Controllers\CatalogController::class, 'category'])->name('catalog_category');
+Route::get('/catalog/{slug}', [\App\Http\Controllers\CatalogController::class, 'category'])->name('catalog_category');
 
-Route::get('/catalog/{id}/{product_id}', [\App\Http\Controllers\CatalogController::class, 'detail'])->name('catalog_detail');
+Route::get('/catalog/{slug}/{product_id}', [\App\Http\Controllers\CatalogController::class, 'detail'])->name('catalog_detail');
 
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

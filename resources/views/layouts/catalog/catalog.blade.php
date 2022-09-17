@@ -191,7 +191,7 @@
                         <ul>
 
                             @foreach ($categories as $category)
-                                <li><a href="{{ route('catalog') }}/{{$category->id}}">{{$category->name}}</a></li>
+                                <li><a href="{{ route('catalog') }}/{{$category->slug}}">{{$category->name}}</a></li>
                             @endforeach
 
                         </ul>

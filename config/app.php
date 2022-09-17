@@ -174,6 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        // ADD FOR ROLES
+        Spatie\Permission\PermissionServiceProvider::class,
 
     ],
 

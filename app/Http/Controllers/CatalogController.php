@@ -13,15 +13,21 @@ class CatalogController extends Controller
 
         $categories = Category::all();
 
-        return view('layouts.catalog.catalog',
-            ['categories' => $categories]
-        );
+        if($categories){
+            return view('layouts.catalog.catalog',
+                ['categories' => $categories]
+            );
+        }else{
+            return 'Нету категорий';
+        }
+
+
 
     }
     // for category page
-    public function category($id){
+    public function category($slug){
 
-        $category = Category::findOrFail($id);
+        $category = Category::where('slug',$slug)->firstOrfail();
         $categories = Category::all();
 
         return view('layouts.catalog.catalog',
@@ -31,7 +37,7 @@ class CatalogController extends Controller
 
     }
 
-    public function detail($id,$product_id){
+    public function detail($slug,$product_id){
 
         $product = Product::where('id', $product_id)->get();
 
